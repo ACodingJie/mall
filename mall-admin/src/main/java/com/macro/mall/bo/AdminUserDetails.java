@@ -25,6 +25,7 @@ public class AdminUserDetails implements UserDetails {
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         //返回当前用户的角色
+        System.out.println(111);
         return resourceList.stream()
                 .map(role ->new SimpleGrantedAuthority(role.getId()+":"+role.getName()))
                 .collect(Collectors.toList());
